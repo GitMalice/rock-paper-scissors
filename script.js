@@ -7,9 +7,9 @@ let result = "";
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
-let randomPick = getRandomInt(3);
 
 function computerPlay() {
+  let randomPick = getRandomInt(3);
   switch (randomPick) {
     case 0:
       return (computerSelection = "paper");
@@ -29,6 +29,7 @@ computerPlay();
 // console.log("choix:" + computerSelection);
 
 function play() {
+  computerPlay();
   playerSelection = prompt(
     "Rock, Paper or Scissors ? (type 'R', 'P' or 'S' to play, 'Q' to quit)"
   );
