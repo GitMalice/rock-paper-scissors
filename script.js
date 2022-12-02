@@ -71,46 +71,46 @@ function battle(playerSelection, computerSelection) {
   switch (playerSelection) {
     case "rock":
       if (computerSelection == "rock") {
-        result = `What a waste of time. Both of you played ${playerSelection}. It's a draw.`;
+        result = `What a waste of time. Both of you played ${playerSelection}. It's a DRAW`;
       }
       if (computerSelection == "paper") {
         compPoints++;
-        result = `You played ${playerSelection} and the computer played ${computerSelection}. You lost!`;
+        result = `You played ${playerSelection} and the computer played ${computerSelection}. You LOST`;
       }
       if (computerSelection == "scissors") {
         yourPoints++;
-        result = `You played ${playerSelection} and the computer played ${computerSelection}. You won!`;
+        result = `You played ${playerSelection} and the computer played ${computerSelection}. You WON`;
       }
       break;
     case "paper":
       if (computerSelection == "rock") {
         yourPoints++;
-        result = `You played ${playerSelection} and the computer played ${computerSelection}. You won!`;
+        result = `You played ${playerSelection} and the computer played ${computerSelection}. You WON`;
       }
       if (computerSelection == "paper") {
-        result = `What a waste of time. Both of you played ${playerSelection}. It's a draw.`;
+        result = `What a waste of time. Both of you played ${playerSelection}. It's a DRAW`;
       }
       if (computerSelection == "scissors") {
         compPoints++;
-        result = `You played ${playerSelection} and the computer played ${computerSelection}. You lost!`;
+        result = `You played ${playerSelection} and the computer played ${computerSelection}. You LOST`;
       }
       break;
     case "scissors":
       if (computerSelection == "rock") {
         compPoints++;
-        result = `You played ${playerSelection} and the computer played ${computerSelection}. You lost!`;
+        result = `You played ${playerSelection} and the computer played ${computerSelection}. You LOST`;
       }
       if (computerSelection == "paper") {
         yourPoints++;
-        result = `You played ${playerSelection} and the computer played ${computerSelection}. You won!`;
+        result = `You played ${playerSelection} and the computer played ${computerSelection}. You WON`;
       }
       if (computerSelection == "scissors") {
-        result = `What a waste of time. Both of you played ${playerSelection}. It's a draw.`;
+        result = `What a waste of time. Both of you played ${playerSelection}. It's a DRAW`;
       }
       break;
     case "quit":
       console.log("Thanks for playing, see you next time");
-      updateGame();
+      // updateGame();
       break;
     default:
       console.log("The game encountered an error");
@@ -118,9 +118,15 @@ function battle(playerSelection, computerSelection) {
 }
 
 function updateGame() {
-  alert(
-    `${result}. You have a score of ${yourPoints}, while the computer scores ${compPoints}.`
-  );
+  if (playerSelection == "quit") {
+    alert(
+      `Your have a final score of ${yourPoints}, while the computer scores ${compPoints}.`
+    );
+  } else {
+    alert(
+      `${result}. You have a score of ${yourPoints}, while the computer scores ${compPoints}.`
+    );
+  }
 }
 
 function nextStep() {
@@ -132,11 +138,16 @@ function nextStep() {
     alert(
       `You win with ${yourPoints} points while the poor computer only got ${compPoints}!`
     );
-  } else {
+  } else if (playerSelection != "quit") {
     game();
   }
 }
 
+play();
+check(playerSelection);
+battle(playerSelection, computerSelection);
+updateGame();
+nextStep();
 function game() {
   play();
   check(playerSelection);
@@ -145,6 +156,8 @@ function game() {
   nextStep();
 }
 
-game();
+// if (compPoints < 5 && yourPoints < 5 && playerSelection != "quit") {
+//   game();
+// }
 
 // console.log(typeof playerSelection);
