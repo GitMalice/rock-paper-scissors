@@ -51,7 +51,7 @@ function wrongPlay() {
 
 function check(Usertext) {
   let lower = playerSelection.toLowerCase();
-  let lower = lower.trim();
+  lower = lower.trim();
   if (lower === "r" || lower === "rock") {
     playerSelection = "rock";
   } else if (lower === "p" || lower === "paper") {
@@ -142,11 +142,6 @@ function nextStep() {
   }
 }
 
-play();
-check(playerSelection);
-battle(playerSelection, computerSelection);
-updateGame();
-nextStep();
 function game() {
   play();
   check(playerSelection);
@@ -154,3 +149,5 @@ function game() {
   updateGame();
   nextStep();
 }
+
+game();
