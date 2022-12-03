@@ -51,7 +51,7 @@ function wrongPlay() {
 
 function check(Usertext) {
   var lower = playerSelection.toLowerCase();
-  var lower = playerSelection.trim();
+  var lower = lower.trim();
   if (lower === "r") {
     playerSelection = "rock";
   } else if (lower === "p") {
