@@ -50,15 +50,15 @@ function wrongPlay() {
 }
 
 function check(Usertext) {
-  var lower = playerSelection.toLowerCase();
-  var lower = lower.trim();
-  if (lower === "r") {
+  let lower = playerSelection.toLowerCase();
+  let lower = lower.trim();
+  if (lower === "r" || lower === "rock") {
     playerSelection = "rock";
-  } else if (lower === "p") {
+  } else if (lower === "p" || lower === "paper") {
     playerSelection = "paper";
-  } else if (lower === "s") {
+  } else if (lower === "s" || lower === "scissors") {
     playerSelection = "scissors";
-  } else if (lower === "q") {
+  } else if (lower === "q" || lower === "quit") {
     playerSelection = "quit";
   } else {
     console.log("Wrong entry");
@@ -154,9 +154,3 @@ function game() {
   updateGame();
   nextStep();
 }
-
-// if (compPoints < 5 && yourPoints < 5 && playerSelection != "quit") {
-//   game();
-// }
-
-// console.log(typeof playerSelection);
