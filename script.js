@@ -25,9 +25,6 @@ function computerPlay() {
   }
 }
 
-computerPlay();
-// console.log("choix:" + computerSelection);
-
 function play() {
   computerPlay();
   playerSelection = prompt(
