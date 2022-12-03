@@ -30,6 +30,11 @@ computerPlay();
 
 function play() {
   computerPlay();
+  if (playerSelection == " ") {
+    playerSelection = prompt(
+      "Rock, Paper or Scissors ? (type 'R', 'P' or 'S' to play, 'Q' to quit)"
+    );
+  }
   playerSelection = prompt(
     "Rock, Paper or Scissors ? (type 'R', 'P' or 'S' to play, 'Q' to quit)"
   );
