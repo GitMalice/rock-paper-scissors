@@ -51,7 +51,7 @@ function wrongPlay() {
   );
   while (!playerSelection) {
     playerSelection = prompt(
-      "Don't be shy, pick something ! So, Rock, Paper or Scissors ? (type 'R', 'P' or 'S' to play, 'Q' to quit)"
+      "Pick something ! So, Rock, Paper or Scissors ? (type 'R', 'P' or 'S' to play, 'Q' to quit)"
     );
   }
   check(playerSelection);
